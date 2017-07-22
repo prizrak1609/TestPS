@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="une-Wn-tY0">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recipe Labs-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="RecipesList" customModule="TestPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="kzE-cY-1pX">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wUd-e4-Ssv">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.14901960784313725" green="0.47450980392156861" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="Mt4-hS-KyY">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="barTintColor" red="0.14901960784313725" green="0.47450980392156861" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leading" secondItem="kzE-cY-1pX" secondAttribute="leading" id="2CM-vn-ZXV"/>
+                            <constraint firstItem="wUd-e4-Ssv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ICL-XV-5ga"/>
+                            <constraint firstItem="kzE-cY-1pX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KeY-eR-cTd"/>
+                            <constraint firstItem="wUd-e4-Ssv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="N4c-4x-f4M"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wUd-e4-Ssv" secondAttribute="bottom" id="Vgg-qK-wXR"/>
+                            <constraint firstAttribute="trailing" secondItem="wUd-e4-Ssv" secondAttribute="trailing" id="aEb-Lz-rB8"/>
+                            <constraint firstAttribute="trailing" secondItem="kzE-cY-1pX" secondAttribute="trailing" id="la9-w7-HM0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kzE-cY-1pX" secondAttribute="bottom" id="v8z-sP-Q1u"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recipe Labs" id="dZb-vE-ltB"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Mt4-hS-KyY" id="crA-oM-FSj"/>
+                        <outlet property="tableView" destination="wUd-e4-Ssv" id="IKG-lU-I39"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998" y="697"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="77V-SZ-I7h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="une-Wn-tY0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4eI-nX-7nG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zHB-yk-LBF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="saK-Pi-SEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="120" y="697.18309859154931"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="462" height="442"/>
+    </resources>
+</document>
