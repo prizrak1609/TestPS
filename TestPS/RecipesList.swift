@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 fileprivate let cellReuseIdentifier = "RecipeListCell"
 
@@ -45,7 +46,13 @@ extension RecipesList : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        // TODO: open model.siteURLPath
+        let model = models[indexPath.row]
+        if let url = URL(string: model.siteURLPath), UIApplication.shared.canOpenURL(url) {
+            let controller = SFSafariViewController(url: url)
+            navigationController?.pushViewController(controller, animated: true)
+        } else {
+            showText(NSLocalizedString("Can't create or open \(model.siteURLPath)", comment: "RecipesList tableView(_:didSelectRowAt:)"))
+        }
     }
 }
 
