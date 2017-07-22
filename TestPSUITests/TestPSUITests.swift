@@ -31,6 +31,30 @@ class TestPSUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertTrue(true)
     }
-    
+
+    func testScroll() {
+        let tablesQuery = XCUIApplication().tables
+        tablesQuery.cells.allElementsBoundByIndex[0].swipeUp()
+    }
+
+    func testSearch() {
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        let searchField = tablesQuery.children(matching: .searchField).element
+        searchField.tap()
+        searchField.typeText("Oni")
+        tablesQuery.staticTexts["Beef - Ar - Oni (Quick)"].tap()
+        app.buttons["Done"].tap()
+        searchField.tap()
+        tablesQuery.buttons["Cancel"].tap()
+    }
+
+    func testOpenURL() {
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["Vegetable-Pasta Oven Omelet"].tap()
+        app.buttons["Done"].tap()
+    }
 }

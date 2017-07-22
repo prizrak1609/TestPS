@@ -74,6 +74,22 @@ extension RecipesList : UISearchBarDelegate {
         searchBar.delegate = self
     }
 
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(true, animated: true)
+        return true
+    }
+
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.resignFirstResponder()
+        return true
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.resignFirstResponder()
+    }
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(serverSearchText(_:)), object: searchText)
         perform(#selector(serverSearchText), with: searchText, afterDelay: 0.5)
