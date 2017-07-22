@@ -21,6 +21,9 @@
 		7871996E1F23525C0056AD42 /* TestPSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871996D1F23525C0056AD42 /* TestPSTests.swift */; };
 		787199791F23525C0056AD42 /* TestPSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787199781F23525C0056AD42 /* TestPSUITests.swift */; };
 		78D966A11F2366DC00773A54 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D966A01F2366DC00773A54 /* Server.swift */; };
+		78D966A41F236C6C00773A54 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D966A21F236C6C00773A54 /* libsqlite3.0.tbd */; };
+		78D966A51F236C6C00773A54 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D966A31F236C6C00773A54 /* libsqlite3.tbd */; };
+		78D966A81F236C8200773A54 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D966A71F236C8200773A54 /* Database.swift */; };
 		8F06D8C512B0391844537039 /* Pods_TestPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BF0F30F4DDB3A04A4BE35 /* Pods_TestPS.framework */; };
 		F8E1E55A30CBFF554B686784 /* Pods_TestPSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E69C4A3B2D92196016D35D /* Pods_TestPSTests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +72,10 @@
 		787199781F23525C0056AD42 /* TestPSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPSUITests.swift; sourceTree = "<group>"; };
 		7871997A1F23525C0056AD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78D966A01F2366DC00773A54 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		78D966A21F236C6C00773A54 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		78D966A31F236C6C00773A54 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		78D966A71F236C8200773A54 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		78D966A91F236C9B00773A54 /* TestPS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestPS-Bridging-Header.h"; sourceTree = "<group>"; };
 		B71DBE4612AE75E5D193B8A5 /* Pods-TestPSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPSUITests/Pods-TestPSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D947C366550D067003964444 /* Pods-TestPS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPS/Pods-TestPS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D966A41F236C6C00773A54 /* libsqlite3.0.tbd in Frameworks */,
+				78D966A51F236C6C00773A54 /* libsqlite3.tbd in Frameworks */,
 				8F06D8C512B0391844537039 /* Pods_TestPS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +162,7 @@
 		787199571F23525C0056AD42 /* TestPS */ = {
 			isa = PBXGroup;
 			children = (
+				78D966A61F236C7200773A54 /* DataBase */,
 				78D9669F1F2366CA00773A54 /* Server */,
 				782B7F281F2355ED00203DB8 /* Global */,
 				787199871F2352730056AD42 /* RecipesList */,
@@ -182,6 +192,7 @@
 		787199861F23526B0056AD42 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				78D966A91F236C9B00773A54 /* TestPS-Bridging-Header.h */,
 				787199581F23525C0056AD42 /* AppDelegate.swift */,
 				7871995F1F23525C0056AD42 /* Assets.xcassets */,
 				787199611F23525C0056AD42 /* LaunchScreen.storyboard */,
@@ -208,9 +219,19 @@
 			name = Server;
 			sourceTree = "<group>";
 		};
+		78D966A61F236C7200773A54 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				78D966A71F236C8200773A54 /* Database.swift */,
+			);
+			name = DataBase;
+			sourceTree = "<group>";
+		};
 		947A3C6C3F00609F1F7200C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78D966A21F236C6C00773A54 /* libsqlite3.0.tbd */,
+				78D966A31F236C6C00773A54 /* libsqlite3.tbd */,
 				271BF0F30F4DDB3A04A4BE35 /* Pods_TestPS.framework */,
 				73E69C4A3B2D92196016D35D /* Pods_TestPSTests.framework */,
 				44CBCA135D97EB5D9767CECB /* Pods_TestPSUITests.framework */,
@@ -309,6 +330,7 @@
 				TargetAttributes = {
 					787199541F23525C0056AD42 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 					};
 					787199681F23525C0056AD42 = {
@@ -533,6 +555,7 @@
 				7871995B1F23525C0056AD42 /* RecipesList.swift in Sources */,
 				787199591F23525C0056AD42 /* AppDelegate.swift in Sources */,
 				782B7F2B1F23561A00203DB8 /* Functions.swift in Sources */,
+				78D966A81F236C8200773A54 /* Database.swift in Sources */,
 				782B7F341F235B9900203DB8 /* RecipeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,12 +709,15 @@
 			baseConfigurationReference = 4CD99959AF340CD143BFFA7E /* Pods-TestPS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TestPS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.ps.TestPS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestPS/TestPS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -701,12 +727,14 @@
 			baseConfigurationReference = D947C366550D067003964444 /* Pods-TestPS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TestPS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.ps.TestPS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestPS/TestPS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
