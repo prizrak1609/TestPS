@@ -11,19 +11,19 @@ import Alamofire
 import SwiftyJSON
 
 protocol ServerDelegate : class {
-    func error(_: Error)
+    func error(_ error: Error)
 }
 
 final class Server {
     private let baseURL = "http://www.recipepuppy.com/api/"
     private let dataBase = Database()
 
-    weak var delegate: ServerDelegate!
+    weak var delegate: ServerDelegate?
 
-    init(delegate: ServerDelegate) {
+    init(delegate: ServerDelegate?) {
         self.delegate = delegate
         if case .failure(let error) = dataBase.openOrCreate() {
-            delegate.error(error)
+            delegate?.error(error)
         }
     }
 
