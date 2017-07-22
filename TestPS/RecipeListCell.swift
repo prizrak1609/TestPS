@@ -19,6 +19,7 @@ final class RecipeListCell: UITableViewCell {
             guard let model = model else { return }
             titleLabel.text = model.title
             if let url = URL(string: model.thumbnail) {
+                thumbnailImageView.layer.borderWidth = 1
                 thumbnailImageView.af_setImage(withURL: url)
             }
             descriptionTextView.text = model.ingredients
@@ -26,8 +27,16 @@ final class RecipeListCell: UITableViewCell {
         }
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        thumbnailImageView.layer.borderWidth = 0
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         descriptionTextView.isScrollEnabled = false
+        thumbnailImageView.layer.masksToBounds = true
+        thumbnailImageView.layer.borderColor = UIColor.gray.cgColor
+        thumbnailImageView.layer.cornerRadius = thumbnailImageView.frame.height / 2
     }
 }
