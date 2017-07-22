@@ -25,6 +25,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = Storyboards.recipesList
         window?.makeKeyAndVisible()
+        // MARK: set navigation bar tint color
+        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.1490196078, green: 0.4745098039, blue: 0.03529411765, alpha: 1)
         // MARK: init perfomance view
         #if DEBUG
             if window != nil {
