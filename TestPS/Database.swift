@@ -55,9 +55,9 @@ final class Database {
             let createRecipeString = "insert into recipes (title, href, ingredients, thumbnail) values (?, ?, ?, ?);"
             if sqlite3_prepare_v2(database, createRecipeString, -1, &createItem, nil) == SQLITE_OK {
                 sqlite3_bind_text(createItem, 1, (recipe.title as NSString).utf8String, -1, nil)
-                sqlite3_bind_text(createItem, 1, (recipe.siteURLPath as NSString).utf8String, -1, nil)
-                sqlite3_bind_text(createItem, 1, (recipe.ingredients as NSString).utf8String, -1, nil)
-                sqlite3_bind_text(createItem, 1, (recipe.thumbnail as NSString).utf8String, -1, nil)
+                sqlite3_bind_text(createItem, 2, (recipe.siteURLPath as NSString).utf8String, -1, nil)
+                sqlite3_bind_text(createItem, 3, (recipe.ingredients as NSString).utf8String, -1, nil)
+                sqlite3_bind_text(createItem, 4, (recipe.thumbnail as NSString).utf8String, -1, nil)
                 if sqlite3_step(createItem) != SQLITE_DONE {
                     return .failure(NSError(domain: String(cString: sqlite3_errmsg(database)), code: 0, userInfo: nil))
                 }

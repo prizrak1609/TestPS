@@ -24,6 +24,7 @@
 		78D966A41F236C6C00773A54 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D966A21F236C6C00773A54 /* libsqlite3.0.tbd */; };
 		78D966A51F236C6C00773A54 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D966A31F236C6C00773A54 /* libsqlite3.tbd */; };
 		78D966A81F236C8200773A54 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D966A71F236C8200773A54 /* Database.swift */; };
+		78D966AC1F237D4600773A54 /* TestPSDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D966AB1F237D4600773A54 /* TestPSDatabaseTests.swift */; };
 		8F06D8C512B0391844537039 /* Pods_TestPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BF0F30F4DDB3A04A4BE35 /* Pods_TestPS.framework */; };
 		F8E1E55A30CBFF554B686784 /* Pods_TestPSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E69C4A3B2D92196016D35D /* Pods_TestPSTests.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		78D966A31F236C6C00773A54 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		78D966A71F236C8200773A54 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		78D966A91F236C9B00773A54 /* TestPS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestPS-Bridging-Header.h"; sourceTree = "<group>"; };
+		78D966AB1F237D4600773A54 /* TestPSDatabaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPSDatabaseTests.swift; sourceTree = "<group>"; };
 		B71DBE4612AE75E5D193B8A5 /* Pods-TestPSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPSUITests/Pods-TestPSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D947C366550D067003964444 /* Pods-TestPS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPS/Pods-TestPS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				7871996D1F23525C0056AD42 /* TestPSTests.swift */,
+				78D966AB1F237D4600773A54 /* TestPSDatabaseTests.swift */,
 				7871996F1F23525C0056AD42 /* Info.plist */,
 			);
 			path = TestPSTests;
@@ -565,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7871996E1F23525C0056AD42 /* TestPSTests.swift in Sources */,
+				78D966AC1F237D4600773A54 /* TestPSDatabaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

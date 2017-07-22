@@ -61,7 +61,7 @@ extension RecipesList : UITableViewDelegate, UITableViewDataSource {
         let model = models[indexPath.row]
         if let url = URL(string: model.siteURLPath), UIApplication.shared.canOpenURL(url) {
             let controller = SFSafariViewController(url: url)
-            navigationController?.pushViewController(controller, animated: true)
+            present(controller, animated: true, completion:  nil)
         } else {
             showText(NSLocalizedString("Can't create or open \(model.siteURLPath)", comment: "RecipesList tableView(_:didSelectRowAt:)"))
         }

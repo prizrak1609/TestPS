@@ -10,27 +10,54 @@ import XCTest
 @testable import TestPS
 
 class TestPSTests: XCTestCase {
+
+    var server: Server! = nil
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        server = Server(delegate: nil)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        server = nil
         super.tearDown()
     }
     
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertTrue(true)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+
+    func testGetReceipesWithoutSearchString() {
+        let expect = expectation(description: "get receipes without search string")
+        expect.expectedFulfillmentCount = 2
+        var models = [RecipeModel]()
+        server.getReceipts { result in
+            switch result {
+                case .failure(let error): XCTAssertTrue(false, error.localizedDescription)
+                case .success(let _models):
+                    models = _models
+                    expect.fulfill()
+            }
         }
+        waitForExpectations(timeout: 20, handler: nil)
+        XCTAssertFalse(models.isEmpty)
     }
-    
+
+    func testGetReceipesWithSearchString() {
+        let expect = expectation(description: "get receipes without search string")
+        expect.expectedFulfillmentCount = 2
+        var models = [RecipeModel]()
+        server.getReceipts(text: "Omelet") { result in
+            switch result {
+            case .failure(let error): XCTAssertTrue(false, error.localizedDescription)
+            case .success(let _models):
+                models = _models
+                expect.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 20, handler: nil)
+        XCTAssertFalse(models.isEmpty)
+    }
 }

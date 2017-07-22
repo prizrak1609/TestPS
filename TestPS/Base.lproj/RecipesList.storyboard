@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +24,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="kzE-cY-1pX">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="128" y="376" width="192" height="192"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kzE-cY-1pX" secondAttribute="height" multiplier="1:1" id="zZn-HJ-q9p"/>
+                                </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wUd-e4-Ssv">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -38,12 +43,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="leading" secondItem="kzE-cY-1pX" secondAttribute="leading" id="2CM-vn-ZXV"/>
                             <constraint firstItem="wUd-e4-Ssv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ICL-XV-5ga"/>
-                            <constraint firstItem="kzE-cY-1pX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KeY-eR-cTd"/>
                             <constraint firstItem="wUd-e4-Ssv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="N4c-4x-f4M"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wUd-e4-Ssv" secondAttribute="bottom" id="Vgg-qK-wXR"/>
                             <constraint firstAttribute="trailing" secondItem="wUd-e4-Ssv" secondAttribute="trailing" id="aEb-Lz-rB8"/>
+                            <constraint firstItem="kzE-cY-1pX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="lZ9-lY-R9K"/>
                             <constraint firstAttribute="trailing" secondItem="kzE-cY-1pX" secondAttribute="trailing" id="la9-w7-HM0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kzE-cY-1pX" secondAttribute="bottom" id="v8z-sP-Q1u"/>
                         </constraints>
