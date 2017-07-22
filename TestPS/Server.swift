@@ -10,10 +10,25 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+protocol ServerDelegate : class {
+    func error(_: Error)
+}
+
 final class Server {
     private let baseURL = "http://www.recipepuppy.com/api/"
+    private let dataBase = Database()
+
+    weak var delegate: ServerDelegate!
+
+    init(delegate: ServerDelegate) {
+        self.delegate = delegate
+        if case .failure(let error) = dataBase.openOrCreate() {
+            delegate.error(error)
+        }
+    }
 
     func getReceipts(text: String = "", _ completion: @escaping (Result<[RecipeModel]>) -> Void) {
+        completion(dataBase.getAllReceipes())
         guard let url = URL(string: baseURL) else {
             completion(.failure(NSError(domain: NSLocalizedString("Can't create URL from \(baseURL)", comment: ""), code: 0, userInfo: nil)))
             return
@@ -40,6 +55,13 @@ final class Server {
                     model.siteURLPath = jsonElement["href"].stringValue
                     model.ingredients = jsonElement["ingredients"].stringValue
                     return model
+                }
+                let resultDelete = welf.dataBase.deleteReceipes()
+                if case .failure(let error) = resultDelete {
+                    completion(.failure(error))
+                }
+                if case .success(_) = resultDelete, case .failure(let error) = welf.dataBase.create(recipes: resultArray) {
+                    completion(.failure(error))
                 }
                 completion(.success(resultArray))
             }
